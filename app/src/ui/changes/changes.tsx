@@ -72,7 +72,17 @@ export class Changes extends React.Component<IChangesProps, {}> {
       this.props.dispatcher.changeFileLineSelection(repository, file, selection)
     }
   }
+  // private async handleGenerateCommitMessage() {
+  //   const { file, repository } = this.props
 
+  //   const repoPath = this.props.repository.path
+  //   const result = await runCommitAgent(repoPath)
+  //   if (result) {
+      
+      
+  //     this.props.dispatcher.setCommitMessage(repository, { summary : result.title,  description :result.description, timestamp : 0 });
+  //   }
+  // }
   private onDiscardChanges = (
     diff: ITextDiff,
     diffSelection: DiffSelection
@@ -132,6 +142,8 @@ export class Changes extends React.Component<IChangesProps, {}> {
           onChangeImageDiffType={this.props.onChangeImageDiffType}
           onHideWhitespaceInDiffChanged={this.onHideWhitespaceInDiffChanged}
         />
+
+
       </div>
     )
   }

@@ -5508,15 +5508,16 @@ export class AppStore extends TypedBaseStore<IAppState> {
         return false
       }
 
-      const api = API.fromAccount(account)
+      const api = new API('http://127.0.0.1:8765','');
+     
       try {
-        const response = await api.getDiffChangesCommitMessage(diff)
+       const response  =  await api.getDiffChangesCommitMessage(diff)
 
         this._setCommitMessage(repository, {
           summary: response.title,
           description: response.description,
           timestamp: Date.now(),
-          generatedByCopilot: true,
+          generatedByCopilot: false,
         })
 
         this.statsStore.increment('generateCommitMessageCount')
