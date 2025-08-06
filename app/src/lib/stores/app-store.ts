@@ -5513,6 +5513,8 @@ export class AppStore extends TypedBaseStore<IAppState> {
       try {
        const response  =  await api.getDiffChangesCommitMessage(diff)
 
+       log.debug(`[Generate Commit Message] - Response - ${diff}`)
+       
         this._setCommitMessage(repository, {
           summary: response.title,
           description: response.description,

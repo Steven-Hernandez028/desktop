@@ -2,22 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
+      "name": "Debug llm_git_agent.py",
+      "type": "debugpy",
       "request": "launch",
-      "name": "Debug current test file",
-      "args": [
-        "--disable-warning=ExperimentalWarning",
-        "--experimental-test-module-mocks",
-        "--import",
-        "tsx",
-        "--import",
-        "${workspaceFolder}/app/test/globals.mts",
-        "--test",
-        "${relativeFile}"
-      ],
-      "envFile": "${workspaceFolder}/.test.env",
+      "program": "${workspaceFolder}/llm_git_agent.py",
       "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen"
+      "args": ["serve"]
     }
   ]
 }
